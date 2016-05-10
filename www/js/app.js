@@ -1,5 +1,8 @@
 var db = null,
-    sqlplugin = null;
+    sqlplugin = null,
+    UTCShift = 3*60*60,
+    scene = {"name": "", "active": 0, "id": 0, "start": 0, "endTime": 0, "task": 0};
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function($ionicPlatform,  $cordovaSQLite) {
@@ -13,9 +16,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
     sqlplugin = $cordovaSQLite;
     db = $cordovaSQLite.openDB({name: "quest.db", location: "default"});
-    createDB();
     getContext();
-
 //    alert('DB successfully opened');
     /*$cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS tasks (id integer primary key, title varchar, content varchar, img varchar, type integer);');
     alert('Table created');

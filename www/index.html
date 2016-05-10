@@ -19,6 +19,7 @@
   <script src="js/ng-cordova.min.js"></script>
   <script src="cordova.js"></script>
   <!-- your app's js -->
+  <script src="js/jquery.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/sqlplugin.js"></script>
@@ -28,13 +29,14 @@
 <ion-pane>
   <ion-header-bar class="bar-positive">
     <div id="timer">00:00</div>
-    <h1 class="title">Quest</h1>
+    <h2 class="title">Quest</h2>
   </ion-header-bar>
   <ion-content class="padding login">
     <div class="text">
-      <p></p>
+      <h1></h1>
+      <div id="content"></div>
     </div>
-    <button class="button icon right" ng-click="">Далее</button>
+    <button class="button icon center" ng-click="getnextpage()" ng-controller="NextCtrl">Далее</button>
   </ion-content>
 </ion-pane>
 
